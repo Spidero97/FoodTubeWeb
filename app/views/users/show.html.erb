@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nickname:</strong>
+  <%= @user.nickname %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<hr/>
+
+            <% if false %>
+
+
+<% if logged_in? %>
+      <h2>Moje składniki</h2>
+      <% current_user.ingredients.each do |ingredient| %>
+          <h3><%= ingredient.name %></h3>    
+           <% end %>
+
+      
+<% else %>
+  Nie jesteś zalogowany.
+<% end %>
+
+
+            <% end %>
+

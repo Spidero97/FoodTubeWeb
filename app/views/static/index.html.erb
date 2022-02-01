@@ -1,0 +1,16 @@
+<h1>twoje składniki</h1>
+
+<% if logged_in? %>
+
+
+<ul>
+<% current_user.ingredients.each do |test| %> 
+  <li><%= test.name %> </li>
+<% end %>
+</ul>
+
+
+<% end %>
+
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Foodtubeweb</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body style="background-color:#e6e6e6;">
+
+
+<ul>
+<li><%= link_to "Strona główna", root_path %></li>
+<li><%= link_to "Ingredients", ingredients_path %></li>
+<li><%= link_to "Recipes", recipes_path %></li>
+<li><%= link_to "Reviews", reviews_path %></li>
+<li><%= link_to "Users", users_path %></li>
+
+<hr/>
+<% if logged_in? %>
+Aktualnie zalogowany:
+  <%= link_to current_user.nickname, current_user %>
+  <br>
+  <%= link_to "Wyloguj", logout_path, method: :delete %>
+<% else %>
+ <%= link_to "Zaloguj", login_path %>
+<% end %>
+</ul>
+
+
+
+
+
+
+    <%= yield %>
+  </body>
+</html>
